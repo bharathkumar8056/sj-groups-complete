@@ -71,6 +71,9 @@ export default function CertificationsContent() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certifications.map((cert) => (
             <div key={cert.name} className="flex flex-col items-center">
+              {/* Certificate Name */}
+              <h3 className="text-xl font-bold text-foreground mt-4 text-center">{cert.name}</h3>
+              
               {/* Certificate Image */}
               <div className="w-full aspect-[8.5/11] bg-white rounded-lg shadow-xl overflow-hidden border-2 border-border">
                 <img
@@ -79,9 +82,6 @@ export default function CertificationsContent() {
                   className={`w-full h-full object-cover ${cert.blur ? "blur-[3px]" : ""}`}
                 />
               </div>
-
-              {/* Certificate Name */}
-              <h3 className="text-xl font-bold text-foreground mt-4 text-center">{cert.name}</h3>
             </div>
           ))}
         </div>
