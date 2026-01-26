@@ -6,7 +6,7 @@ export default function BrochuresContent() {
   const brochure = {
     name: "Product Brochure",
     description: "Comprehensive guide to our Bamboo Salt and Bamboo Stone products",
-    image: "/assets//brochure-img.jpeg",
+    image: "/assets/sj-brochure.png",
     pdf: "/assets/brochure/sj-brochure.pdf",
     details: "Complete specifications, roasting levels, benefits, and usage information for all our premium products."
   }
