@@ -101,8 +101,17 @@ export default function ProductDetail({ product }: ProductProps) {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                onClick={() => window.open('mailto:sjgroupsvpm@gmail.com?subject=Product%20Quote%20Request&body=Hi%20SJ%20GROUPS%2C%0AI%20am%20interested%20in%20ordering%20products.%0APlease%20provide%20a%20quote.%0AThank%20you', '_self')}
+              <button
+                onClick={() => {
+                  const email = "sjgroupsvpm@gmail.com"
+                  const subject = `Product Quote Request - ${product.name}`
+                  const body = `Hi SJ GROUPS,\n\nI am interested in ordering ${product.name}.\n\nPlease provide a quote.\n\nThank you`
+
+                  // Open Gmail compose window
+                  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+
+                  window.open(gmailUrl, '_blank', 'noopener,noreferrer')
+                }}
                 className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all bg-primary text-white hover:brightness-90 h-10 px-6"
               >
                 Get Email Quote
