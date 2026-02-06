@@ -4,9 +4,14 @@ import { Mail } from "lucide-react"
 
 export default function EmailButton() {
   const handleEmailClick = () => {
-    const subject = encodeURIComponent("Product Inquiry - SJ GROUPS")
-    const body = encodeURIComponent("Hi SJ GROUPS,\n\nI would like to get a quote for your bamboo products.\n\nPlease contact me at your earliest convenience.\n\nThank you!")
-    window.location.href = `mailto:sjgroupsvpm@gmail.com?subject=${subject}&body=${body}`
+    const email = "sjgroupsvpm@gmail.com"
+    const subject = "Product Inquiry - SJ GROUPS"
+    const body = "Hi SJ GROUPS,\n\nI would like to get a quote for your bamboo products.\n\nPlease contact me at your earliest convenience.\n\nThank you!"
+
+    // Open Gmail compose window
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+
+    window.open(gmailUrl, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -21,3 +26,4 @@ export default function EmailButton() {
     </button>
   )
 }
+
